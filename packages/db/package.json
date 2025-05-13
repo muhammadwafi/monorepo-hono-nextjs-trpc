@@ -1,0 +1,34 @@
+{
+	"name": "@repo/db",
+	"description": "App db schema",
+	"private": true,
+	"version": "0.0.8",
+	"scripts": {
+		"db:push": "drizzle-kit push",
+		"db:studio": "drizzle-kit studio"
+	},
+	"dependencies": {
+		"drizzle-orm": "^0.38.4",
+		"pg": "^8.14.1",
+		"dotenv": "^16.4.5",
+		"tsx": "^4.19.3"
+	},
+	"devDependencies": {
+		"tsconfig": "workspace:*",
+		"@types/pg": "^8.11.11",
+		"drizzle-kit": "^0.30.5"
+	},
+	"exports": {
+		".": {
+			"import": "./src/index.ts",
+			"require": "./src/index.ts"
+		},
+		"./schema/*": {
+			"import": "./src/schema/*.ts",
+			"require": "./src/schema/*.ts"
+		}
+	},
+	"publishConfig": {
+		"access": "public"
+	}
+}

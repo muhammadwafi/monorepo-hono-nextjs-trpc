@@ -1,0 +1,17 @@
+{
+	"name": "@repo/better-auth",
+	"description": "Better auth config",
+	"version": "0.0.8",
+	"dependencies": {
+		"better-auth": "^1.2.6"
+	},
+	"devDependencies": {
+		"tsconfig": "workspace:*"
+	},
+	"exports": {
+		".": "./index.ts"
+	},
+	"publishConfig": {
+		"access": "public"
+	}
+}

@@ -1,0 +1,37 @@
+{
+	"name": "server",
+	"main": "src/index.ts",
+	"type": "module",
+	"scripts": {
+		"build": "tsc && tsc-alias",
+		"check-types": "tsc --noEmit",
+		"compile": "bun build --compile --minify --sourcemap --bytecode ./src/index.ts --outfile server",
+		"dev": "bun run --hot src/index.ts",
+		"start": "bun run dist/src/index.js",
+		"db:seed": "bunx tsx --env-file=./.env src/db/seed.ts"
+	},
+	"dependencies": {
+		"@hono/trpc-server": "^0.3.4",
+		"@repo/better-auth": "workspace:*",
+		"@repo/db": "workspace:*",
+		"@trpc/client": "^11.0.0",
+		"@trpc/server": "^11.0.0",
+		"better-auth": "^1.2.6",
+		"dotenv": "^16.4.7",
+		"drizzle-orm": "^0.38.4",
+		"drizzle-zod": "^0.7.1",
+		"date-fns": "^4.1.0",
+		"hono": "^4.7.6",
+		"pg": "^8.14.1",
+		"resend": "^4.4.1",
+		"zod": "^3.24.2"
+	},
+	"devDependencies": {
+		"@types/bun": "^1.2.6",
+		"@types/pg": "^8.11.11",
+		"drizzle-kit": "^0.30.5",
+		"tsc-alias": "^1.8.11",
+		"tsx": "^4.19.3",
+		"typescript": "^5.8.3"
+	}
+}
